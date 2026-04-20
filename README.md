@@ -3,11 +3,37 @@
 ![HaleES Architecture](assets/IMG_0475.jpeg)
 
 <p align="center">
-  <a href="https://github.com/FatherHale/FatherHale-halees-architecture/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/License-AGPL--3.0-blue.svg" alt="License"></a>
-  <img src="https://img.shields.io/badge/Patent-Pending-orange.svg" alt="Patent Pending">
-  <img src="https://img.shields.io/badge/Version-0.1.0-lightgrey.svg" alt="v0.1.0">
-  <img src="https://img.shields.io/badge/Type-Architecture%20Spec-9cf.svg" alt="Spec">
+  <img src="https://raw.githubusercontent.com/FatherHale/FatherHale-halees-architecture/main/header.png" width="100%" alt="HaleES Architecture">
 </p>
+
+<p align="center">
+  <a href="https://github.com/FatherHale/FatherHale-halees-architecture/blob/main/LICENSE.md">
+    <img src="https://img.shields.io/badge/License-AGPL--3.0-gold.svg?style=flat" alt="License: AGPL-3.0">
+  </a>
+  <img src="https://img.shields.io/badge/Patent-Pending-gold.svg?style=flat" alt="Patent Pending">
+  <img src="https://img.shields.io/badge/Version-0.1.0-gold.svg?style=flat" alt="Version 0.1.0">
+  <img src="https://img.shields.io/badge/Type-Architecture%20Spec-gold.svg?style=flat" alt="Type: Architecture Spec">
+</p>
+
+## Get Started
+
+This repository contains the **open architecture specification** for HaleES — an enforcement-first governance layer for reliable AI agents.
+
+**Quick Actions:**
+- **[Read the full specification](README.md)** — Understand the core philosophy, dual-layer grading, and contract-driven loop.
+- **[Explore the Contract Format](CONTRACT-SPEC.md)** — See the exact markdown structure with a hospitality example.
+- **[Review the Grading Rubric](GRADING-RUBRIC.md)** — Learn how every output is scored and decided (0–100 + binary 0|1).
+- **[Check the License](LICENSE.md)** — Understand the open-spec vs proprietary boundary.
+- Follow updates on X: [@AskSenseiES](https://x.com/AskSenseiES)
+
+Want to discuss or contribute? Open an issue or reach out on X.
+
+---
+
+**Most AI agent frameworks optimize for flexibility.**  
+**HaleES optimizes for survival in production.**
+
+...
 
 > Public architecture specification for HaleES, An enforcement-first governance layer for reliable, auditable AI agent operations.
 
