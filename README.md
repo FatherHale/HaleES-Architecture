@@ -4,7 +4,7 @@
 
 > Public architecture specification for HaleES, An enforcement-first governance layer for reliable, auditable AI agent operations.
 
-Thesis
+### Thesis
 
 **Most AI agent frameworks optimize for flexibility.**  
 **HaleES optimizes for survival in production.**
