@@ -16,13 +16,13 @@
 This repository contains the **open architecture specification** for HaleES — an enforcement-first governance layer for reliable AI agents.
 
 **Quick Actions:**
-- **[Read the full specification](README.md)** — Understand the core philosophy, dual-layer grading, and contract-driven loop.
-- **[Explore the Contract Format](CONTRACT-SPEC.md)** — See the exact markdown structure with a hospitality example.
-- **[Review the Grading Rubric](GRADING-RUBRIC.md)** — Learn how every output is scored and decided (0–100 + binary 0|1).
-- **[Check the License](LICENSE.md)** — Understand the open-spec vs proprietary boundary.
+- **[Read the full specification](README.md)** Understand the core philosophy, dual-layer grading, and contract-driven loop.
+- **[Explore the Contract Format](CONTRACT-SPEC.md)** See the exact markdown structure with a hospitality example.
+- **[Review the Grading Rubric](GRADING-RUBRIC.md)** Learn how every output is scored and decided (0–100 + binary 0|1).
+- **[Check the License](LICENSE.md)** Understand the open spec vs proprietary boundary.
 - Follow updates on X: [@AskSenseiES](https://x.com/AskSenseiES)
 
-Want to discuss or contribute? Open an issue or reach out on X.
+Want to discuss or contribute? Open an issue or reach out on X or Linkedin.
 
 ---
 
