@@ -1,6 +1,6 @@
 # HaleES Architecture Specification
 
-![HaleES Architecture](assets/halees-architecture-header.jpg)
+![HaleES Architecture](assets/halees-architecture-header.svg)
 
 > Public architecture specification for HaleES — an enforcement-first governance layer for reliable, auditable AI agent operations.
 
