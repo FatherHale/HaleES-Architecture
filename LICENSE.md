@@ -5,9 +5,8 @@
 The public specification documents and examples in this repository are licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
 
 - SPDX identifier: `AGPL-3.0-only`
-- Official license text: https://www.gnu.org/licenses/agpl-3.0.html
-
-A copy of the full AGPL-3.0 license text should be included in this repository (for example, in a `LICENSE` file containing the complete legal text).
+- Full license text: see [`LICENSE`](./LICENSE)
+- Official reference: https://www.gnu.org/licenses/agpl-3.0.html
 
 ## Scope and Boundary Notice
 
