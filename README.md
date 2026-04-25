@@ -18,9 +18,11 @@ The production HaleES runtime is closed. This repository explains the principle,
 
 This is an early public architecture specification.
 
-The contract format, grading rubric, examples, diagrams, JSON samples, reliability notes, and simple validators are public reference material.
+The contract format, grading rubric, examples, diagrams, JSON samples, reliability notes, simple validators, and mock loop are public reference material.
 
 The validators check public shape only. They are not the HaleES production grader.
+
+The mock loop shows contract, mock execution, mock grading, decision, feedback, and iteration. It is not the HaleES production runtime.
 
 The examples are public safe scenarios. They do not expose private customer data, private routing, private memory, private infrastructure, or commercial product code.
 
@@ -32,9 +34,10 @@ The examples are public safe scenarios. They do not expose private customer data
 4. Read GRADER RELIABILITY for the public reliability questions around scoring, review, and gaming.
 5. Read MODEL TOOL AND ORCHESTRATION GOVERNANCE for the public control layer principles.
 6. Read PUBLIC BOUNDARY before using or contributing anything from this repo.
-7. Review the examples folder for public safe scenarios and JSON samples.
+7. Review the examples folder for public safe scenarios, JSON samples, and broader domain examples.
 8. Review the validators folder for simple shape checks.
-9. Read SPEC EVOLUTION to see where the public spec can grow.
+9. Review the reference folder for the mock end to end loop.
+10. Read SPEC EVOLUTION to see where the public spec can grow.
 
 ## What Stays Closed
 
@@ -282,10 +285,13 @@ The examples folder includes public safe scenarios that show how the same patter
 1. Staffing recovery, where the system needs speed and operational clarity.
 2. Privacy sensitive guest recovery, where minimum necessary context matters.
 3. Cross property coordination, where shared pattern intelligence is useful without exposing one property private data to another.
-4. Rubric pass and fail samples, where the scoring and binary decision pattern can be understood without the private production grader.
-5. Sample contract JSON and sample grading result JSON, where the public shape can be seen without exposing the production engine.
+4. Non hospitality incident response, where the same authority and contract pattern applies outside restaurants.
+5. Rubric pass and fail samples, where the scoring and binary decision pattern can be understood without the private production grader.
+6. Sample contract JSON and sample grading result JSON, where the public shape can be seen without exposing the production engine.
 
-The reference and validators folders include public safe tools that check shape only. They do not reproduce private HaleES scoring, routing, memory, or execution logic.
+The reference folder includes a public mock loop that shows a contract being issued, executed against a mock, graded by a dummy scorer, decided, and iterated.
+
+The validators folder includes public safe tools that check shape only. They do not reproduce private HaleES scoring, routing, memory, or execution logic.
 
 ## Adoption Path
 
@@ -296,9 +302,10 @@ People can engage with the open spec in several safe ways.
 1. Study the contract format and grading pattern.
 2. Use the public examples to structure governed work in their own systems.
 3. Run the public validators to check whether a sample contract or grading result has the expected visible shape.
-4. Build small tools that validate whether a contract includes objective, constraints, required output, acceptance criteria, and a decision threshold.
-5. Discuss governance patterns through issues without exposing private customer data or runtime internals.
-6. Compare the pattern against flexibility first frameworks to understand where authority, privacy, audit, and pass or fail decisions should live.
+4. Run the public mock loop to see the contract, grading, decision, feedback, and iteration pattern in one simple file.
+5. Build small tools that validate whether a contract includes objective, constraints, required output, acceptance criteria, and a decision threshold.
+6. Discuss governance patterns through issues without exposing private customer data or runtime internals.
+7. Compare the pattern against flexibility first frameworks to understand where authority, privacy, audit, and pass or fail decisions should live.
 
 The open specification shares the principle. The private HaleES runtime remains the machine.
 
@@ -316,7 +323,7 @@ This is not a claim that every other framework is wrong. It is a different desig
 
 This repository opens the architecture elements needed to understand and implement the HaleES governance pattern at a specification level.
 
-Public material includes contract format, grading rubric, public examples, JSON samples, reference validators, grader reliability notes, the skills are knowledge principle, local first and cloud capable inference pattern, privacy first data boundary principles, and the high level governance pattern.
+Public material includes contract format, grading rubric, public examples, JSON samples, reference validators, grader reliability notes, a mock loop, the skills are knowledge principle, local first and cloud capable inference pattern, privacy first data boundary principles, and the high level governance pattern.
 
 These documents are designed to be useful while remaining safe for public distribution.
 
