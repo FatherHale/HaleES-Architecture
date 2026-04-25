@@ -1,12 +1,13 @@
 # Public Boundary
 
-This repository is the public architecture specification for HaleES.
-
-The purpose is to explain the governance pattern without exposing the private product runtime.
+> [!IMPORTANT]
+> This repository shares the public HaleES architecture pattern. It does not publish the production Sensei OS runtime or the commercial HaleES engine.
 
 ## What This Repository Is
 
-This repository is a public description of the HaleES architecture at a specification level.
+This repository is the public architecture specification for HaleES.
+
+It explains the governance pattern at a specification level.
 
 It may describe concepts such as contracts, grading, authority, privacy boundaries, local inference, cloud inference, deterministic execution, and auditability.
 
@@ -24,9 +25,16 @@ It is not a place for private customer data, private operational data, secrets, 
 
 ## Open Specification Boundary
 
-The public specification may explain the pattern.
+| Public here | Not public here |
+| --- | --- |
+| Contract pattern | Production contract engine |
+| Public grading shape | Private grader implementation |
+| Public examples | Customer data |
+| Public validators | Runtime enforcement logic |
+| Public diagrams | Infrastructure design |
+| Public schemas | Private schema system |
 
-It may explain that work is defined by contracts.
+The public specification may explain that work is defined by contracts.
 
 It may explain that outputs are scored from 0 to 100.
 
@@ -55,3 +63,5 @@ HaleES benefits from having a public architecture language that builders, operat
 HaleES also benefits from protecting the real product engine.
 
 The goal is to share the principle without giving away the machine.
+
+[Back to README](README.md)
