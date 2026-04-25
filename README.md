@@ -2,262 +2,208 @@
 
 ![HaleES Architecture](assets/IMG_0475.jpeg)
 
-<p align="center">
-  <a href="https://github.com/FatherHale/FatherHale-halees-architecture/blob/main/LICENSE.md">
-    <img src="https://img.shields.io/badge/License-AGPL--3.0-gold.svg?style=flat" alt="License: AGPL-3.0">
-  </a>
-  <img src="https://img.shields.io/badge/Patent-Pending-gold.svg?style=flat" alt="Patent Pending">
-  <img src="https://img.shields.io/badge/Version-0.1.0-gold.svg?style=flat" alt="Version 0.1.0">
-  <img src="https://img.shields.io/badge/Type-Architecture%20Spec-gold.svg?style=flat" alt="Type: Architecture Spec">
-</p>
-
 ## Get Started
 
-This repository contains the **open architecture specification** for HaleES. An enforcement first governance layer for reliable AI agents.
+This repository contains the open architecture specification for HaleES. HaleES is an enforcement first governance layer for reliable operational intelligence.
 
-**Quick Actions:**
-- **[Read the full specification](README.md)** Understand the core philosophy, dual layer grading, contract driven loop, local-first/cloud-capable inference, and privacy-first governance pattern.
-- **[Explore the Contract Format](CONTRACT-SPEC.md)** See the exact markdown structure with a hospitality example.
-- **[Review the Grading Rubric](GRADING-RUBRIC.md)** Learn how every output is scored and decided (0–100 + binary 0|1).
-- **[Check the License](LICENSE.md)** Understand the open spec vs proprietary boundary.
-- Follow updates on X: [@AskSenseiES](https://x.com/AskSenseiES)
+Quick actions
 
-Want to discuss or contribute? Open an issue or reach out on X or Linkedin.
+1. Read this full specification to understand the core philosophy, dual layer grading, contract driven execution, local first inference, cloud capable inference, and privacy first governance.
+2. Explore the contract format in CONTRACT SPEC to see the public markdown structure with a hospitality example.
+3. Review the grading rubric in GRADING RUBRIC to understand how outputs are scored from 0 to 100 and decided as 0 or 1.
+4. Read PUBLIC BOUNDARY to understand what is open and what stays proprietary.
+5. Read SECURITY to understand how to report security concerns.
+6. Follow updates on X at @AskSenseiES.
 
----
+Most agent frameworks chase flexibility.
+HaleES is built for survival in real operations.
 
-**Most AI agent frameworks optimize for flexibility.**  
-**HaleES optimizes for survival in production.**
+## Thesis
 
-...
+The problem is simple. A system can generate a useful answer and still be unsafe to trust.
 
-> Public architecture specification for HaleES, An enforcement first governance layer for reliable, auditable AI agent operations.
+That is why HaleES starts with governance, not generation.
 
-### Thesis
+In real operations, especially hospitality, the question is not only what an agent can do. The better question is what the agent is allowed to do, under which policy, with what evidence, and how the result is accepted or rejected.
 
-**Most AI agent frameworks optimize for flexibility.**  
-**HaleES optimizes for survival in production.**
+HaleES exists for that gap.
 
-If you’ve shipped agents into real operations, you already know the pattern: promising prototypes drift, authority leaks, and traceability disappears the moment they leave the lab.
-
-This is not a tooling problem. It is a **governance problem**.
-
-HaleES exists to solve it.
-
-Many modern AI agent frameworks are built to maximize flexibility: connect more tools, support more prompts, chain more workflows, and allow agents to improvise across loosely bounded tasks. That flexibility can be useful for experimentation. But production operations, especially in domains where service quality, policy compliance, and accountability matter and require something stricter.
-
-HaleES starts from a different premise: an operational AI system is only as reliable as its governance. In real environments, useful intelligence must be paired with enforceable authority boundaries, traceable decisions, explicit quality gates, and deterministic pass/fail outcomes.
-
-In other words, HaleES is not designed around “what can an agent do?” It is designed around “what is this agent explicitly permitted to do, under which policy, with what evidence, and how do we decide if the work is acceptable?”
-
-That is the architectural center of gravity for this specification.
-
-HaleES is not an AI chatbot for hospitality. It is a governed operational intelligence layer where AI, local inference, deterministic rules, human approvals, and audited execution all work inside one control system.
+It is not a chatbot for hospitality. It is a governed operational intelligence layer where models, local inference, deterministic rules, human approvals, and audited execution all work inside one control system.
 
 ## Why HaleES Exists
 
-Organizations adopting AI often hit a recurring operational gap:
+Organizations adopting artificial intelligence usually hit the same problem.
 
-- They can generate outputs quickly.
-- They cannot consistently govern execution quality.
-- They cannot reliably prove why a decision passed.
-- They cannot always prevent unauthorized or risky behavior from being treated as acceptable work.
+1. They can generate outputs quickly.
+2. They cannot always govern execution quality.
+3. They cannot always prove why a decision passed.
+4. They cannot always stop unauthorized or risky behavior from being treated as acceptable work.
 
-In flexibility first patterns, capability often arrives before control. In operations, that order is backwards.
+In flexible systems, capability often comes before control. In operations, that order is backwards.
 
-HaleES exists to invert that order. It is built for environments where outputs must be:
+HaleES is built for environments where outputs must be bounded by policy, scored against explicit criteria, accepted through a clear threshold, and auditable after execution.
 
-- **bounded by policy**, not only by prompt intent.
-- **scored against explicit criteria**, not judged informally.
-- **accepted through a clear decision threshold**, not by default.
-- **auditable after execution**, not opaque once delivered.
+The architecture does not reject model capability. It puts model capability inside authority, privacy, grading, and execution boundaries.
 
-This architecture does not reject model capability. It contextualizes it. Intelligence remains valuable, but governance defines whether intelligence is operationally usable.
+## Local First, Cloud Capable Intelligence
 
-## Local-First, Cloud-Capable Intelligence
+HaleES is designed as a local first, cloud capable hospitality operating system.
 
-HaleES is designed as a local-first, cloud-capable hospitality operating system.
+The system can use large language models when they are useful, but core operational authority does not depend entirely on a model. HaleES keeps durable structure under the intelligence layer. That structure includes permissions, roles, audit records, execution queues, operational state, grading contracts, tool governance, deterministic business rules, and explicit acceptance gates.
 
-The system can use large language models when they are useful, but core operational authority does not depend entirely on an LLM. HaleES keeps durable structure underneath the intelligence layer: permissions, roles, audit logs, execution queues, operational state, grading contracts, tool governance, deterministic business rules, and explicit acceptance gates.
+Inference can run in more than one place depending on the job.
 
-Inference can run in multiple places depending on the job:
+1. Cloud inference can support heavier reasoning, long context analysis, research, cross property coordination, and high capability model routing.
+2. Local or device level inference can support lower latency work, privacy sensitive workflows, offline continuity, and site specific operational support.
+3. Deterministic execution can support work that should be handled by rules, scores, constraints, schemas, queues, or approved tools without needing a model at all.
 
-- **Cloud inference** for heavier reasoning, long-context analysis, research, cross-property coordination, and high-capability model routing.
-- **Local or device-level inference** for lower-latency actions, privacy-sensitive workflows, offline continuity, and site-specific operational support.
-- **Non-LLM deterministic execution** for workflows that should be handled by rules, scores, constraints, schemas, queues, or approved tools.
+This makes HaleES model flexible rather than model dependent. The model is one reasoning surface inside a governed operating system, not the whole product.
 
-This makes HaleES model-flexible rather than model-dependent. The LLM is one reasoning surface inside a governed operating system, not the entire product.
+The goal is operational continuity. If cloud intelligence is available, HaleES can use it. If local inference is better, HaleES can route there. If no model is needed, HaleES can still operate through governed system logic.
 
-The goal is operational continuity: if cloud intelligence is available, HaleES can use it; if local inference is better, HaleES can route there; if no model is needed, HaleES can still operate through governed system logic.
+## Privacy First Data Boundary
 
-## Privacy-First Data Boundary
+HaleES treats privacy as architecture, not decoration.
 
-HaleES treats privacy as an architectural requirement, not a post-launch feature.
+Local first intelligence supports this by allowing sensitive operational context to stay closer to the property, device, or organization when cloud processing is not necessary. Inference placement can be selected based on privacy, risk, latency, and operational need.
 
-Local-first intelligence supports this principle by allowing sensitive operational context to remain closer to the property, device, or organization when cloud processing is not necessary. The system is designed so inference placement can be selected based on privacy, risk, latency, and operational need.
+At a public specification level, HaleES follows three principles.
 
-At a specification level, HaleES follows three public principles:
+1. Minimum necessary context. Only the context needed for a task should be available to the model, tool, or workflow doing that task.
+2. Governed memory boundaries. Personal, organizational, and cross organization intelligence must stay separated by policy and permission.
+3. Pattern learning without exposure. Shared intelligence should improve the system through generalized patterns, not by revealing one organization private data to another.
 
-- **Minimum necessary context**: only the context required for a task should be made available to the model, tool, or workflow performing that task.
-- **Governed memory boundaries**: personal, organizational, and cross-organization intelligence must remain separated by policy and permission.
-- **Pattern learning without exposure**: shared intelligence should improve the system through generalized patterns, not by revealing one organization’s private data to another.
+This means HaleES can learn from operations without treating private operational data as public knowledge. Privacy, permission, and execution authority belong in the same governance layer.
 
-This means HaleES can learn from operations without treating private operational data as public knowledge. Privacy, permission, and execution authority remain part of the same governance layer.
+## Core Principle, Skills Are Knowledge, Not Authority
 
-## Core Principle: Skills Are Knowledge, Not Authority
+A foundational HaleES principle is simple.
 
-A foundational HaleES principle is simple and non-negotiable:
+Skills are knowledge. Authority is not automatic.
 
-> Skills are knowledge. Authority is not automatic.
+A skill, prompt, model, tool, or workflow does not gain permission just because it exists or can execute.
 
-A skill, prompt, model, tool, or workflow does **not** gain permission just because it exists or can execute.
+In HaleES, authority must come from governance signals such as verified identity, applicable policy, risk classification, approval requirements, and audited execution context.
 
-In HaleES, authority must come from governance signals such as:
+This matters because many failures are not failures of generation. They are failures of authorization. A system can produce plausible output and still violate process, policy, or operational safety. HaleES separates what a component knows from what it is allowed to do.
 
-- verified identity
-- applicable policy
-- risk classification
-- approval requirements
-- and audited execution context
+## Sensei as Orchestration and Control Plane
 
-This distinction matters because many AI failures are not failures of generation. They are failures of authorization. A system can produce plausible output and still violate process, policy, or operational safety. HaleES addresses that failure mode by separating what a component **knows** from what it is **allowed** to do.
+Within the HaleES architecture, Sensei is the governance and orchestration control plane.
 
-## Sensei as Orchestration/Control Plane
-
-Within the HaleES architecture, **Sensei** is the governance and orchestration control plane.
-
-Sensei is **not** one model.
-Sensei is **not** one chat screen.
-Sensei is **not** one route.
-Sensei is **not** one button.
+Sensei is not one model. Sensei is not one chat screen. Sensei is not one route. Sensei is not one button.
 
 Sensei is the control layer that determines which models, tools, workflows, policies, and execution methods may be used in a given operational context.
 
-Conceptually:
+The public concept is simple.
 
-- **Models** are specialists/tools.
-- **Tools** are governed capabilities.
-- **Contracts** define requested work.
-- **Grading** determines whether work passes.
+1. Models are specialists.
+2. Tools are governed capabilities.
+3. Contracts define requested work.
+4. Grading determines whether work passes.
+5. Execution only moves forward through authority boundaries.
 
-This architecture ensures that orchestration is policy aware rather than ad hoc. Selection and execution are not merely capability driven. They are governance driven.
+This keeps orchestration policy aware instead of improvised. Selection and execution are not only capability driven. They are governance driven.
 
-To be explicit about boundary: The production Sensei OS runtime remains proprietary. This public repository describes architectural patterns, open contract/grading conventions, and governance principles—not the closed production internals.
+The production Sensei OS runtime remains proprietary. This public repository describes architectural patterns, open contract and grading conventions, and governance principles. It does not expose closed production internals.
 
-### Dual-Layer Grading
+## Dual Layer Grading
 
-HaleES evaluates work through a dual-layer grading mechanism that combines nuanced scoring with a decisive outcome.
+HaleES evaluates work through a dual layer grading mechanism that combines nuanced scoring with a decisive outcome.
 
-### Layer 1: Gradient Evaluation (0–100)
+### Layer 1, Gradient Evaluation
 
-Each evaluated output receives category scores from **0 to 100** across five dimensions:
+Each evaluated output receives category scores from 0 to 100 across five dimensions.
 
-1. **accuracy**
-2. **efficiency**
-3. **constraint_adherence**
-4. **quality**
-5. **timeliness**
+1. Accuracy.
+2. Efficiency.
+3. Constraint adherence.
+4. Quality.
+5. Timeliness.
 
-These category scores are aggregated into a **global_score** (0–100).
+These scores are aggregated into a global score from 0 to 100.
 
-### Layer 2: Binary Decision (0|1)
+### Layer 2, Binary Decision
 
-A binary acceptance decision is then applied:
+A binary acceptance decision is then applied.
 
-- **binary_decision = 1** if `global_score >= 85`
-- **binary_decision = 0** if `global_score < 85`
+1. The binary decision is 1 when the global score is 85 or higher.
+2. The binary decision is 0 when the global score is below 85.
+3. Confidence is tracked separately from pass or fail.
 
-A separate **confidence** value in range 0–1 is tracked independently of pass/fail.
+HaleES treats both layers as necessary.
 
-### Why Dual-Layer Matters
+0 to 100 evaluates.
+0 or 1 decides.
 
-HaleES treats both layers as essential:
+No decision exists without scoring. No scoring matters without a decision.
 
-- **0–100 evaluates.**
-- **0|1 decides.**
+Gradient scoring gives explainability. Binary gating gives operational clarity.
 
-No decision exists without scoring.
-No scoring matters without a decision.
+## Contract Driven Loop
 
-Gradient scoring provides explainability and diagnostic granularity. Binary gating provides operational clarity and enforceable acceptance behavior.
+HaleES execution follows a contract driven loop.
 
-## Contract-Driven Loop
+1. The orchestrator creates a contract with objective, constraints, acceptance criteria, and expected output shape.
+2. The agent, model, or tool executes against that contract.
+3. The system grades the output using the dual layer rubric.
+4. If the binary decision is 1, the result can be finalized.
+5. If the binary decision is 0, feedback is appended and the task iterates.
+6. The default maximum is five iterations.
 
-HaleES execution follows a contract driven loop:
+This creates disciplined progress toward acceptable output instead of open ended retry behavior.
 
-1. **Orchestrator creates a contract** with objective, constraints, acceptance criteria, and expected output shape.
-2. **Agent/model/tool executes** against that contract.
-3. **System grades the output** using the dual-layer rubric.
-4. If `binary_decision = 1`, the result is finalized.
-5. If `binary_decision = 0`, feedback is appended and the task iterates.
-6. **Maximum 5 iterations by default.**
+## Example High Level Flow
 
-This loop creates disciplined progression toward acceptable output rather than unconstrained retry behavior. Each cycle is anchored by explicit criteria and measurable improvement targets.
+A supervisor submits a request to produce a staffing recovery plan for a same day shift gap.
 
-## Example High-Level Flow
+The orchestrator issues a structured contract with required sections, policy boundaries, and constraints.
 
-Below is a public-safe high-level lifecycle for a governed AI task:
+A selected specialist model or tool produces a draft plan.
 
-1. A supervisor submits a request to produce a staffing recovery plan for a same day shift gap.
-2. The orchestrator issues a structured contract with required sections, policy boundaries, and constraints.
-3. A selected specialist model/tool produces a draft plan.
-4. The grader scores the draft across the five categories and computes `global_score`.
-5. If below threshold, the system attaches actionable feedback (e.g., missing contingency branch, incomplete escalation criteria) and re-runs iteration.
-6. Once score reaches threshold, binary decision flips to pass and the output is finalized for operational use.
+The grader scores the draft across the five categories and computes the global score.
 
-The important distinction is that generation alone never finalizes work. Acceptance is governance mediated.
+If the score is below threshold, the system attaches actionable feedback and runs another iteration.
 
-## How HaleES Differs from Flexibility-First Frameworks
+Once the score reaches threshold, the binary decision flips to pass and the output is finalized for operational use.
 
-HaleES is compatible with modern model ecosystems but differs in architectural priorities.
+Generation alone never finalizes work. Acceptance is governed.
 
-| Dimension | Flexibility-First Pattern (Common) | HaleES Enforcement-First Pattern |
-|---|---|---|
-| Primary optimization | Capability breadth and speed of experimentation | Governed execution and enforceable outcomes |
-| Authority model | Often implicit or prompt-driven | Explicitly policy and identity-bound |
-| Acceptance model | Informal reviewer judgment or soft heuristics | Formal dual-layer grading with pass/fail gate |
-| Iteration pattern | Open-ended retries | Contract-bound loop with default max iterations |
-| Audit posture | Variable, often tool-dependent | Designed for traceable scoring and decisions |
-| Privacy posture | Often dependent on provider-level controls | Privacy-first boundaries with local, organizational, and governed pattern-level intelligence |
-| Role of models/tools | Core drivers of behavior | Specialist components under orchestration control |
-| Inference posture | Often tied to a hosted model path | Cloud-capable, local-capable, and deterministic when no model is required |
-| Operational suitability | Strong for prototyping and exploration | Strong for controlled, accountable operations |
+## How HaleES Differs From Flexibility First Frameworks
 
-This comparison is not a critique of other frameworks; it highlights different design objectives.
+HaleES is compatible with modern model ecosystems, but the priorities are different.
+
+Flexibility first patterns usually optimize for capability breadth, fast experimentation, prompt driven behavior, informal acceptance, open ended retries, and provider level privacy controls.
+
+HaleES optimizes for governed execution, explicit authority, formal grading, contract bound iteration, traceable decisions, privacy first boundaries, local or cloud inference, and deterministic operation when no model is required.
+
+This is not a claim that every other framework is wrong. It is a different design objective. HaleES is built for controlled operations, not only exploration.
 
 ## What This Public Specification Includes
 
-This repository intentionally opens the architecture elements needed to understand and implement the HaleES governance pattern at a specification level.
+This repository opens the architecture elements needed to understand and implement the HaleES governance pattern at a specification level.
 
-Included publicly:
+Public material includes contract format, grading rubric, public examples, the skills are knowledge principle, local first and cloud capable inference pattern, privacy first data boundary principles, and the high level governance pattern.
 
-- contract format
-- grading rubric
-- public examples
-- skills-as-knowledge principle
-- local-first/cloud-capable inference pattern
-- privacy-first data boundary principles
-- high-level governance pattern
-
-These documents are designed to be implementation oriented while remaining safe for public distribution.
+These documents are designed to be useful while remaining safe for public distribution.
 
 ## What Remains Proprietary
 
-The following remain proprietary and are not provided in this public specification repository:
+The following remain proprietary and are not provided in this public specification repository.
 
-- Sensei OS production runtime,
-- closed source grader implementation,
-- model routing implementation,
-- local/cloud inference routing implementation,
-- private memory-boundary implementation,
-- command/execution engine,
-- marketplace enforcement engine,
-- production deployment systems,
-- private datasets,
-- hosted infrastructure,
-- commercial HaleES product code.
+1. Sensei OS production runtime.
+2. Closed source grader implementation.
+3. Model routing implementation.
+4. Local and cloud inference routing implementation.
+5. Private memory boundary implementation.
+6. Command and execution engine.
+7. Marketplace enforcement engine.
+8. Production deployment systems.
+9. Private datasets.
+10. Hosted infrastructure.
+11. Commercial HaleES product code.
 
-This boundary is intentional: the specification is open; production runtime internals are not.
+This boundary is intentional. The specification is open. The production runtime internals are not.
 
 ## Patent Pending Notice
 
@@ -267,8 +213,8 @@ This notice is provided for transparency about the architecture direction and do
 
 ## Closing Statement
 
-HaleES proposes a clear architectural stance. In operational AI systems, governance is not an accessory layer applied after generation. Governance is the system.
+HaleES has a clear stance. In operational intelligence systems, governance is not something added after generation. Governance is the system.
 
-By separating knowledge from authority, defining work through contracts, enforcing outcomes with dual layer grading, supporting local-first/cloud-capable intelligence, and treating privacy as part of execution authority, HaleES offers a framework for organizations that need reliable, auditable AI execution instead of best-effort autonomy.
+By separating knowledge from authority, defining work through contracts, enforcing outcomes with dual layer grading, supporting local first and cloud capable intelligence, and treating privacy as part of execution authority, HaleES offers a framework for organizations that need reliable and auditable execution instead of best effort autonomy.
 
 The goal is not less intelligence. The goal is intelligence that can be trusted in production.
