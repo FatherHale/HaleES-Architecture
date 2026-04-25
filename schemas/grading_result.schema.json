@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FatherHale/HaleES-Architecture/schemas/grading_result.schema.json",
+  "title": "HaleES Public Grading Result Shape",
+  "description": "Public schema for the visible shape of a grading result. This is not the private HaleES production grader.",
+  "type": "object",
+  "required": [
+    "rubric_version",
+    "contract_id",
+    "category_scores",
+    "global_score",
+    "threshold",
+    "binary_decision",
+    "confidence",
+    "result",
+    "iteration"
+  ],
+  "properties": {
+    "rubric_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contract_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category_scores": {
+      "type": "object",
+      "required": [
+        "accuracy",
+        "efficiency",
+        "constraint_adherence",
+        "quality",
+        "timeliness"
+      ],
+      "properties": {
+        "accuracy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "efficiency": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "constraint_adherence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "quality": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "timeliness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "additionalProperties": false
+    },
+    "global_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "threshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "binary_decision": {
+      "type": "integer",
+      "enum": [0, 1]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "result": {
+      "type": "string",
+      "enum": ["PASS", "FAIL", "PASS WITH REVIEW"]
+    },
+    "iteration": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "feedback": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "public_boundary_note": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
