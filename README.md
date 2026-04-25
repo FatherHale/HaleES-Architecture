@@ -13,10 +13,65 @@ Quick actions
 3. Review the grading rubric in GRADING RUBRIC to understand how outputs are scored from 0 to 100 and decided as 0 or 1.
 4. Read PUBLIC BOUNDARY to understand what is open and what stays proprietary.
 5. Read SECURITY to understand how to report security concerns.
-6. Follow updates on X at @AskSenseiES.
+6. Review the examples folder for public safe task patterns.
+7. Follow updates on X at @AskSenseiES.
 
 Most agent frameworks chase flexibility.
 HaleES is built for survival in real operations.
+
+## Core Concepts At A Glance
+
+HaleES starts with governance, not generation.
+
+A request is not trusted just because a model can answer it.
+
+A model, tool, workflow, or skill can know something without having authority to act.
+
+A contract defines the work before execution begins.
+
+A grader scores the result from 0 to 100.
+
+A binary decision accepts or rejects the result.
+
+A failed result can iterate with feedback.
+
+A passed result can move forward through the proper authority boundary.
+
+The audit trail matters because operational intelligence has to explain what happened after the fact.
+
+## Public Flow Diagram
+
+```mermaid
+flowchart TD
+    A[Request] --> B[Contract]
+    B --> C[Governed execution]
+    C --> D[Grading]
+    D --> E{Binary decision}
+    E -->|Pass| F[Finalize]
+    E -->|Fail| G[Feedback]
+    G --> B
+    F --> H[Audit record]
+```
+
+## Public Component View
+
+```mermaid
+flowchart TD
+    A[Operator or system request] --> B[Sensei control plane]
+    B --> C[Policy and authority check]
+    C --> D[Contract]
+    D --> E[Execution option]
+    E --> F[Cloud inference]
+    E --> G[Local inference]
+    E --> H[Deterministic rules]
+    F --> I[Grading]
+    G --> I
+    H --> I
+    I --> J[Pass or fail]
+    J --> K[Audit]
+    C --> L[Privacy boundary]
+    L --> D
+```
 
 ## Thesis
 
@@ -168,6 +223,57 @@ If the score is below threshold, the system attaches actionable feedback and run
 Once the score reaches threshold, the binary decision flips to pass and the output is finalized for operational use.
 
 Generation alone never finalizes work. Acceptance is governed.
+
+## Sample Public Contract Snippet
+
+```markdown
+# Contract
+
+Objective
+Create a same day staffing recovery plan for a missed shift.
+
+Authority boundary
+The output may recommend actions, but it may not directly change the schedule or contact employees without approval.
+
+Required output
+1. Situation summary.
+2. Coverage risk.
+3. Recovery options.
+4. Recommended option.
+5. Escalation trigger.
+
+Acceptance criteria
+1. The plan identifies the uncovered role and time window.
+2. The plan provides at least two recovery options.
+3. The plan respects role permission and labor constraints.
+4. The plan explains when a manager should intervene.
+
+Decision threshold
+Global score must be 85 or higher.
+```
+
+## More Public Examples
+
+The examples folder includes public safe scenarios that show how the same pattern can apply in different contexts.
+
+1. Staffing recovery, where the system needs speed and operational clarity.
+2. Privacy sensitive guest recovery, where minimum necessary context matters.
+3. Cross property coordination, where shared pattern intelligence is useful without exposing one property private data to another.
+4. A simple reference validator, written as pseudocode, for people who want to understand the contract and grading pattern without seeing the private HaleES runtime.
+
+## Adoption Path
+
+This public specification is meant to be useful even though the production HaleES runtime remains closed.
+
+People can engage with the open spec in several safe ways.
+
+1. Study the contract format and grading pattern.
+2. Use the public examples to structure governed work in their own systems.
+3. Build small tools that validate whether a contract includes objective, constraints, required output, acceptance criteria, and a decision threshold.
+4. Discuss governance patterns through issues without exposing private customer data or runtime internals.
+5. Compare the pattern against flexibility first frameworks to understand where authority, privacy, audit, and pass or fail decisions should live.
+
+The open specification shares the principle. The private HaleES runtime remains the machine.
 
 ## How HaleES Differs From Flexibility First Frameworks
 
