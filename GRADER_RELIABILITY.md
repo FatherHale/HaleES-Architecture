@@ -1,10 +1,7 @@
 # Grader Reliability
 
-This document explains the public reliability questions around grading.
-
-It does not expose the HaleES production grader.
-
-It does not reveal private scoring prompts, private rules, private calibration data, private models, private test suites, or runtime internals.
+> [!IMPORTANT]
+> This document explains public reliability principles only. It does not expose the HaleES production grader, scoring prompts, private calibration data, model routing, test suites, or runtime internals.
 
 ## The Hard Question
 
@@ -19,6 +16,18 @@ An inconsistent grader can create false confidence.
 A grader with too much authority can become another uncontrolled agent.
 
 HaleES treats grading as a governed process, not a decorative score.
+
+## Reliability Map
+
+| Risk | Public safeguard |
+| --- | --- |
+| Vague scoring | Contract defined acceptance criteria |
+| Surface level compliance | Constraint adherence category |
+| False confidence | Confidence tracked separately from pass or fail |
+| Unclear failure | Category level feedback |
+| Unsafe pass | Human review and authority boundary |
+| Endless retry | Iteration limits |
+| No audit trail | Decision and feedback record |
 
 ## Public Reliability Principles
 
@@ -100,3 +109,5 @@ The public validators check shape.
 The public examples show pass and fail reasoning.
 
 The production reliability layer is part of the closed HaleES runtime.
+
+[Back to README](README.md)
