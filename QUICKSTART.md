@@ -1,12 +1,17 @@
 # Quickstart
 
-This quickstart shows the public reference material.
+> [!IMPORTANT]
+> This quickstart runs public reference material only. It does not run the HaleES production runtime, private grader, model routing, memory system, or execution engine.
 
-It does not run the HaleES production runtime.
+## Start Here
 
-It does not run the private grader.
-
-It only runs public examples, shape validators, and the mock loop.
+| Goal | Command or file |
+| --- | --- |
+| See the loop move | `python reference/end_to_end_mock_loop.py` |
+| Check a markdown contract | `python validators/contract_validator.py examples/staffing_recovery_contract.md` |
+| Check a grading result | `python validators/grading_validator.py examples/sample_grading_result.json` |
+| Inspect contract shape | `schemas/contract.schema.json` |
+| Inspect grading shape | `schemas/grading_result.schema.json` |
 
 ## Run The Mock Loop
 
@@ -16,21 +21,18 @@ From the repository root, run this command.
 python reference/end_to_end_mock_loop.py
 ```
 
-The script shows a simple public flow.
+The script shows the public pattern in motion.
 
-Contract.
+1. Contract.
+2. Mock execution.
+3. Dummy grading.
+4. Binary decision.
+5. Feedback.
+6. Iteration.
+7. Pass or fail.
 
-Mock execution.
-
-Dummy grading.
-
-Binary decision.
-
-Feedback.
-
-Iteration.
-
-Pass or fail.
+> [!NOTE]
+> The dummy grader is intentionally simple. It is included so the public loop can be touched and tested. It is not the production HaleES grader.
 
 ## Validate A Markdown Contract Shape
 
@@ -62,8 +64,8 @@ It does not reproduce the private HaleES grader.
 
 The schemas folder contains public JSON Schemas for the visible contract shape and grading result shape.
 
-1. schemas/contract.schema.json
-2. schemas/grading_result.schema.json
+1. `schemas/contract.schema.json`
+2. `schemas/grading_result.schema.json`
 
 These schemas are public reference material.
 
@@ -74,3 +76,5 @@ They are not the private production schema system.
 This quickstart exists so people can touch the public pattern quickly.
 
 The production HaleES runtime, private grading implementation, private routing, private memory boundaries, and private execution engine remain closed.
+
+[Back to README](README.md)
