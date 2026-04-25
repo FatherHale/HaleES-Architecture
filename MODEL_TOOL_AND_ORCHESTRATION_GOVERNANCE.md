@@ -1,10 +1,7 @@
 # Model, Tool, And Orchestration Governance
 
-This document explains a public HaleES architecture principle.
-
-It does not expose the private HaleES runtime.
-
-It does not list production model names, provider choices, internal aliases, exact budgets, ranking formulas, internal routes, deployment details, or private implementation code.
+> [!IMPORTANT]
+> This document explains public governance principles only. It does not list production model names, provider choices, internal aliases, exact budgets, ranking formulas, internal routes, deployment details, or private implementation code.
 
 ## Core Idea
 
@@ -17,6 +14,16 @@ A tool can act.
 An orchestrator can choose what happens next.
 
 None of those should have unlimited authority by default.
+
+## Governance Map
+
+| Layer | Public principle |
+| --- | --- |
+| Model | Select by purpose, policy, and operational need |
+| Tool | Treat capability as separate from authority |
+| Orchestration | Limit decisions, retries, candidates, timeouts, and escalation |
+| Failure | Stop safely when the trusted path is unavailable |
+| Promotion | Review candidates before making them trusted behavior |
 
 ## Model Governance
 
@@ -150,3 +157,5 @@ The following remain private.
 The public specification explains the principle.
 
 The private HaleES runtime remains the machine.
+
+[Back to README](README.md)
