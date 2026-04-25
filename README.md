@@ -1,44 +1,60 @@
+<div align="center">
+
 # HaleES Architecture Specification
 
 ![HaleES Architecture](assets/IMG_0475.jpeg)
+
+**Governed operational intelligence for systems where a useful answer is not the same thing as a trusted action.**
+
+![Status](https://img.shields.io/badge/status-public%20specification-C9A227?style=for-the-badge&labelColor=0B0B0B)
+![Runtime](https://img.shields.io/badge/runtime-proprietary-0B0B0B?style=for-the-badge&labelColor=C9A227)
+![Pattern](https://img.shields.io/badge/pattern-contract%20grading%20audit-C9A227?style=for-the-badge&labelColor=0B0B0B)
+![Boundary](https://img.shields.io/badge/boundary-public%20safe-0B0B0B?style=for-the-badge&labelColor=C9A227)
+
+</div>
+
+> [!IMPORTANT]
+> HaleES starts with governance, not generation. This repository shares the public contract, grading, privacy, and governance pattern. The production Sensei OS runtime stays closed.
+
+## Front Door
+
+| Need | Start here |
+| --- | --- |
+| Run the public demo loop | [Quickstart](QUICKSTART.md) |
+| Understand contracts | [Contract Spec](CONTRACT-SPEC.md) |
+| Understand scoring | [Grading Rubric](GRADING-RUBRIC.md) |
+| Understand grader trust | [Grader Reliability](GRADER_RELIABILITY.md) |
+| Understand model and tool control | [Model, Tool, And Orchestration Governance](MODEL_TOOL_AND_ORCHESTRATION_GOVERNANCE.md) |
+| Understand what stays closed | [Public Boundary](PUBLIC_BOUNDARY.md) |
+| See public examples | [Examples](examples) |
+| Run shape checks | [Validators](validators) |
+| Inspect JSON Schemas | [Schemas](schemas) |
+| See where the spec is going | [Spec Evolution](SPEC_EVOLUTION.md) |
 
 ## What This Is
 
 HaleES is a public architecture specification for governed operational intelligence.
 
-A useful answer is not the same thing as a trusted action.
+A useful answer can still be unsafe to trust. HaleES treats that as the starting point.
 
-HaleES starts with that line.
+The public pattern is contract driven work, dual layer grading, local first and cloud capable inference, privacy boundaries, model governance, tool governance, orchestration governance, and auditable authority.
 
-This repository explains the public pattern behind contract driven execution, dual layer grading, local first and cloud capable inference, privacy boundaries, model governance, tool governance, orchestration governance, and auditable authority.
-
-The production HaleES runtime is closed. This repository explains the public pattern, not the private engine.
+The private product runtime is not published here.
 
 ## Current Status
 
-This is an early public architecture specification.
+This is an early public specification with runnable reference material.
 
-It now includes diagrams, public examples, JSON samples, JSON Schemas, shape validators, a mock end to end loop, and reliability notes.
+| Public artifact | What it does | What it is not |
+| --- | --- | --- |
+| [Mock loop](reference/end_to_end_mock_loop.py) | Shows contract, mock execution, dummy grading, decision, feedback, and iteration | Not the production runtime |
+| [Validators](validators) | Check public contract and grading result shape | Not the production grader |
+| [JSON Schemas](schemas) | Define public JSON shapes | Not the private schema system |
+| [Examples](examples) | Show public safe scenarios | Not customer data or runtime logic |
+| [Reliability notes](GRADER_RELIABILITY.md) | Explain public grader trust questions | Not private scoring implementation |
 
-The validators check public shape only. They are not the HaleES production grader.
-
-The mock loop is runnable reference code. It shows the loop, but it is not the HaleES production runtime.
-
-The examples are public safe. They do not expose private customer data, private routing, private memory, private infrastructure, or commercial product code.
-
-## Start Here
-
-1. [Quickstart](QUICKSTART.md) shows how to run the public mock loop and validators.
-2. [Contract Spec](CONTRACT-SPEC.md) defines the public contract format.
-3. [Grading Rubric](GRADING-RUBRIC.md) defines the 0 to 100 score and 0 or 1 decision pattern.
-4. [Grader Reliability](GRADER_RELIABILITY.md) explains the public reliability questions around scoring, review, and gaming.
-5. [Model, Tool, And Orchestration Governance](MODEL_TOOL_AND_ORCHESTRATION_GOVERNANCE.md) explains the public control layer principles.
-6. [Public Boundary](PUBLIC_BOUNDARY.md) explains what is open and what stays closed.
-7. [Spec Evolution](SPEC_EVOLUTION.md) explains where the public spec can grow.
-8. [Examples](examples) contains public safe scenarios, JSON samples, and broader domain examples.
-9. [Validators](validators) contains simple public shape checks.
-10. [Reference](reference) contains the mock end to end loop.
-11. [Schemas](schemas) contains public JSON Schemas.
+> [!TIP]
+> Start with `python reference/end_to_end_mock_loop.py` if you want to see the loop move instead of only reading about it.
 
 ## What Stays Closed
 
