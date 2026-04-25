@@ -1,0 +1,45 @@
+{
+  "contract_id": "public_example_staffing_recovery_001",
+  "version": "1.0",
+  "domain": "hospitality_operations",
+  "risk_level": "medium",
+  "objective": "Create a same day staffing recovery plan for a missed shift.",
+  "context": {
+    "scenario": "A front of house team member called off before a dinner rush.",
+    "time_window": "same day service window",
+    "operator_need": "manager needs a recovery plan before peak service"
+  },
+  "authority_boundary": [
+    "The output may recommend actions.",
+    "The output may not directly change the schedule.",
+    "The output may not contact employees without approval.",
+    "The output may not approve overtime without manager review."
+  ],
+  "required_output": [
+    "situation_summary",
+    "coverage_risk",
+    "recovery_options",
+    "recommended_option",
+    "escalation_trigger"
+  ],
+  "acceptance_criteria": [
+    "The plan identifies the uncovered role and time window.",
+    "The plan gives at least two recovery options.",
+    "The plan respects role coverage and labor constraints.",
+    "The plan explains when a manager should intervene.",
+    "The plan separates recommendation from execution."
+  ],
+  "grading_target": {
+    "rubric": "halees_dual_layer_v1_public",
+    "threshold_global_score": 85,
+    "binary_pass_rule": "global_score >= 85 gives binary_decision 1, otherwise binary_decision 0",
+    "confidence_tracking": true
+  },
+  "iteration_rules": {
+    "max_iterations": 5,
+    "failure_behavior": "append feedback and retry",
+    "stop_condition_pass": "binary_decision equals 1",
+    "stop_condition_fail": "maximum iterations reached without pass"
+  },
+  "public_boundary_note": "This is a public example shape. It is not the HaleES production contract engine."
+}
