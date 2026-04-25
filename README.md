@@ -16,7 +16,7 @@
 This repository contains the **open architecture specification** for HaleES. An enforcement first governance layer for reliable AI agents.
 
 **Quick Actions:**
-- **[Read the full specification](README.md)** Understand the core philosophy, dual layer grading, contract driven loop, and local-first/cloud-capable inference pattern.
+- **[Read the full specification](README.md)** Understand the core philosophy, dual layer grading, contract driven loop, local-first/cloud-capable inference, and privacy-first governance pattern.
 - **[Explore the Contract Format](CONTRACT-SPEC.md)** See the exact markdown structure with a hospitality example.
 - **[Review the Grading Rubric](GRADING-RUBRIC.md)** Learn how every output is scored and decided (0–100 + binary 0|1).
 - **[Check the License](LICENSE.md)** Understand the open spec vs proprietary boundary.
@@ -89,6 +89,20 @@ Inference can run in multiple places depending on the job:
 This makes HaleES model-flexible rather than model-dependent. The LLM is one reasoning surface inside a governed operating system, not the entire product.
 
 The goal is operational continuity: if cloud intelligence is available, HaleES can use it; if local inference is better, HaleES can route there; if no model is needed, HaleES can still operate through governed system logic.
+
+## Privacy-First Data Boundary
+
+HaleES treats privacy as an architectural requirement, not a post-launch feature.
+
+Local-first intelligence supports this principle by allowing sensitive operational context to remain closer to the property, device, or organization when cloud processing is not necessary. The system is designed so inference placement can be selected based on privacy, risk, latency, and operational need.
+
+At a specification level, HaleES follows three public principles:
+
+- **Minimum necessary context**: only the context required for a task should be made available to the model, tool, or workflow performing that task.
+- **Governed memory boundaries**: personal, organizational, and cross-organization intelligence must remain separated by policy and permission.
+- **Pattern learning without exposure**: shared intelligence should improve the system through generalized patterns, not by revealing one organization’s private data to another.
+
+This means HaleES can learn from operations without treating private operational data as public knowledge. Privacy, permission, and execution authority remain part of the same governance layer.
 
 ## Core Principle: Skills Are Knowledge, Not Authority
 
@@ -204,6 +218,7 @@ HaleES is compatible with modern model ecosystems but differs in architectural p
 | Acceptance model | Informal reviewer judgment or soft heuristics | Formal dual-layer grading with pass/fail gate |
 | Iteration pattern | Open-ended retries | Contract-bound loop with default max iterations |
 | Audit posture | Variable, often tool-dependent | Designed for traceable scoring and decisions |
+| Privacy posture | Often dependent on provider-level controls | Privacy-first boundaries with local, organizational, and governed pattern-level intelligence |
 | Role of models/tools | Core drivers of behavior | Specialist components under orchestration control |
 | Inference posture | Often tied to a hosted model path | Cloud-capable, local-capable, and deterministic when no model is required |
 | Operational suitability | Strong for prototyping and exploration | Strong for controlled, accountable operations |
@@ -221,6 +236,7 @@ Included publicly:
 - public examples
 - skills-as-knowledge principle
 - local-first/cloud-capable inference pattern
+- privacy-first data boundary principles
 - high-level governance pattern
 
 These documents are designed to be implementation oriented while remaining safe for public distribution.
@@ -233,6 +249,7 @@ The following remain proprietary and are not provided in this public specificati
 - closed source grader implementation,
 - model routing implementation,
 - local/cloud inference routing implementation,
+- private memory-boundary implementation,
 - command/execution engine,
 - marketplace enforcement engine,
 - production deployment systems,
@@ -252,6 +269,6 @@ This notice is provided for transparency about the architecture direction and do
 
 HaleES proposes a clear architectural stance. In operational AI systems, governance is not an accessory layer applied after generation. Governance is the system.
 
-By separating knowledge from authority, defining work through contracts, enforcing outcomes with dual layer grading, and supporting local-first/cloud-capable intelligence, HaleES offers a framework for organizations that need reliable, auditable AI execution instead of best-effort autonomy.
+By separating knowledge from authority, defining work through contracts, enforcing outcomes with dual layer grading, supporting local-first/cloud-capable intelligence, and treating privacy as part of execution authority, HaleES offers a framework for organizations that need reliable, auditable AI execution instead of best-effort autonomy.
 
 The goal is not less intelligence. The goal is intelligence that can be trusted in production.
