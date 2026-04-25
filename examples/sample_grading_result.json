@@ -1,0 +1,19 @@
+{
+  "rubric_version": "halees_dual_layer_v1_public",
+  "contract_id": "public_example_staffing_recovery_001",
+  "category_scores": {
+    "accuracy": 92,
+    "efficiency": 88,
+    "constraint_adherence": 94,
+    "quality": 90,
+    "timeliness": 91
+  },
+  "global_score": 91,
+  "threshold": 85,
+  "binary_decision": 1,
+  "confidence": 0.89,
+  "result": "PASS",
+  "iteration": 2,
+  "feedback": [],
+  "public_boundary_note": "This is a public example result. It is not the HaleES production grader output."
+}
