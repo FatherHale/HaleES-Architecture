@@ -37,6 +37,7 @@ It is a system plan, not a production-complete component claim.
 | Read the complete archive | [Full Whitepaper Archive](FULL_WHITEPAPER.md) |
 | Study the 56-agent hospitality architecture | [HaleES-56 Hospitality Agent Architecture](HALEES_56_HOSPITALITY_AGENT_ARCHITECTURE.md) |
 | Browse the public agent registry | [HaleES-56 Agent Registry](agents/README.md) |
+| Run the HaleES-56 reference demo | [HaleES-56 Reference Implementation](reference/halees_56/README.md) |
 | Run the public demo loop | [Quickstart](QUICKSTART.md) |
 | See HaleES block a bad action | [Failure Case: Labor Cut](examples/failure-case-labor-cut.md) |
 | Understand contracts | [Contract Spec](CONTRACT-SPEC.md) |
@@ -66,6 +67,7 @@ A useful answer can still be unsafe to trust. HaleES treats that as the starting
 | Observability | Enforcement events become telemetry, not dead logs |
 | Rule management | Business rules can scale without hard coding every change |
 | HaleES-56 agent architecture | Hospitality work is mapped into governed specialist capability profiles |
+| Public reference implementation | Deterministic sample code makes the pattern inspectable without exposing the runtime |
 | Local first and cloud capable inference | Intelligence can run where the task needs it |
 | Privacy boundaries | Context is governed before it is used |
 | Auditability | Decisions should be explainable after the fact |
@@ -79,6 +81,7 @@ This repository is not the HaleES runtime, but it includes small public referenc
 
 | Runnable piece | Command | Purpose |
 | --- | --- | --- |
+| HaleES-56 reference demo | `python reference/halees_56/demo.py` | Routes hospitality signals through a public agent registry and deterministic policy gate |
 | Mock contract loop | `python reference/end_to_end_mock_loop.py` | Shows contract, mock execution, dummy grading, decision, feedback, and iteration |
 | Contract validator | `python validators/contract_validator.py examples/staffing_recovery_contract.md` | Checks whether a markdown contract has the expected public sections |
 | Grading validator | `python validators/grading_validator.py examples/sample_grading_result.json` | Checks whether a grading result has the expected public fields and threshold decision |
@@ -114,6 +117,7 @@ This is an early public specification with runnable reference material.
 | [Full Whitepaper Archive](FULL_WHITEPAPER.md) | Preserves the complete long-form paper in one file | Not the production runtime |
 | [HaleES-56 Hospitality Agent Architecture](HALEES_56_HOSPITALITY_AGENT_ARCHITECTURE.md) | Defines 56 governed hospitality agent profiles, clusters, boundaries, and public workflow examples | Not internal prompts, production orchestration, or live customer logic |
 | [HaleES-56 Agent Registry](agents/README.md) | Provides public cluster files for the 56 specialist profiles | Not private agent prompts or runtime instructions |
+| [HaleES-56 Reference Implementation](reference/halees_56/README.md) | Provides deterministic sample code for registry validation, routing, policy gates, and example decisions | Not the production runtime, private grader, or live integrations |
 | [Mock loop](reference/end_to_end_mock_loop.py) | Shows contract, mock execution, dummy grading, decision, feedback, and iteration | Not the production runtime |
 | [Failure cases](examples/failure-case-labor-cut.md) | Shows bad actions being blocked | Not live customer logic |
 | [Validators](validators) | Check public contract and grading result shape | Not the production grader |
@@ -125,7 +129,7 @@ This is an early public specification with runnable reference material.
 | [Rule management notes](docs/rule-management.md) | Explain scalable policy ownership | Not the private admin console |
 
 > [!TIP]
-> Start with `agents/README.md` for the cluster registry, `HALEES_56_HOSPITALITY_AGENT_ARCHITECTURE.md` for the agent operating map, `whitepaper/README.md` for the visual reader, or `python reference/end_to_end_mock_loop.py` if you want to see the loop move instead of only reading about it.
+> Start with `reference/halees_56/demo.py` to see a public code path, `agents/README.md` for the cluster registry, `HALEES_56_HOSPITALITY_AGENT_ARCHITECTURE.md` for the agent operating map, or `whitepaper/README.md` for the visual reader.
 
 ## What Stays Closed
 
@@ -156,6 +160,7 @@ The public architecture materials in this repository are licensed under Apache-2
 | Public diagrams and documentation | Hosted infrastructure and deployment systems |
 | Public governance pattern | Commercial runtime workflows and private policies |
 | Public HaleES-56 agent architecture | Internal prompts, proprietary execution logic, and runtime implementation |
+| Public deterministic reference code | Production execution engine, private model routing, and closed-source adapters |
 
 Commercial teams may study, fork, and build from the public architecture materials under Apache-2.0 terms. Commercial access to the HaleES production runtime, proprietary implementation, partnerships, support, or private deployment work requires a separate agreement with HaleES / Jason Hale.
 
@@ -362,6 +367,7 @@ Global score must be 85 or higher.
 | --- | --- |
 | [HaleES-56 Hospitality Agent Architecture](HALEES_56_HOSPITALITY_AGENT_ARCHITECTURE.md) | 56 governed hospitality agent profiles and public-safe workflow examples |
 | [HaleES-56 Agent Registry](agents/README.md) | Public cluster files for each governed agent domain |
+| [HaleES-56 Reference Implementation](reference/halees_56/README.md) | Deterministic code for registry validation, routing, policy gates, and demo decisions |
 | [Failure case: labor cut](examples/failure-case-labor-cut.md) | A financially useful recommendation blocked by a hard staffing ratio |
 | [Failure case: policy conflict](examples/failure-case-policy-conflict.md) | High authority request blocked by constitutional policy |
 | [Failure case: missing ground truth](examples/failure-case-missing-ground-truth.md) | Recommendation paused because vendor data is unavailable |
@@ -384,7 +390,8 @@ Global score must be 85 or higher.
 | --- | --- |
 | Learn the pattern | Read the contract, grading, and HaleES-56 docs |
 | Test the shape | Run validators against examples |
-| See the loop | Run the mock Python script |
+| See the public code path | Run `python reference/halees_56/demo.py` |
+| See the contract loop | Run the mock Python script |
 | Watch a failure case | Read the labor cut failure example |
 | Build around the public spec | Use the schemas and examples |
 | Discuss the architecture | Open issues without private data or runtime details |
@@ -416,6 +423,7 @@ This is not a claim that every other framework is wrong. It is a different desig
 | --- | --- |
 | Contract format | Sensei OS production runtime |
 | HaleES-56 agent names and responsibilities | Internal prompts and private runtime instructions |
+| HaleES-56 reference code | Production orchestration engine and closed-source adapters |
 | Grading rubric | Closed source grader implementation |
 | Public examples | Model routing implementation |
 | JSON samples and schemas | Local and cloud inference routing implementation |
