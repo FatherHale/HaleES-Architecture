@@ -21,6 +21,14 @@
 > [!IMPORTANT]
 > HaleES starts with governance, not generation. This repository shares the public contract, grading, privacy, observability, failure case, and governance pattern. The production Sensei OS runtime stays closed.
 
+## System Map
+
+![HaleES System Map](assets/halees-full-system-vision.svg)
+
+This map shows the HaleES platform vision across sources, Sensei OS control, store runtime, persistence, integrations, and operating domains.
+
+It is a system map, not a production-complete component claim.
+
 ## Front Door
 
 | Need | Start here |
