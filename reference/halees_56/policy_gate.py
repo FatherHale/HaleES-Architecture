@@ -9,6 +9,10 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 
+AUTHORIZED_PRIVATE_CONTEXT_ROLES = {"manager", "owner", "admin"}
+AUTHORIZED_EXECUTION_ROLES = {"manager", "owner", "admin"}
+
+
 @dataclass(frozen=True)
 class WorkRequest:
     """Public-safe request shape used by the reference demo."""
@@ -51,15 +55,23 @@ def evaluate_request(request: WorkRequest) -> GateDecision:
             required_next_step="Refresh source data before making or dispatching the recommendation.",
         )
 
-    if request.contains_private_data and request.actor_role not in {"manager", "owner", "admin"}:
+    if request.requires_manager_approval:
         return GateDecision(
-            decision="block",
+            decision="review",
             binary=0,
-            reason="Private context is present but the actor role is not authorized for it.",
-            required_next_step="Remove private context or route to an authorized reviewer.",
+            reason="The request explicitly requires manager approval.",
+            required_next_step="Route to Human Manager Review.",
         )
 
-    if request.asks_to_execute and request.actor_role not in {"manager", "owner", "admin"}:
+    if request.contains_private_data and request.actor_role not in AUTHORIZED_PRIVATE_CONTEXT_ROLES:
+        return GateDecision(
+            decision="review",
+            binary=0,
+            reason="Private context is present and must be reviewed by an authorized role.",
+            required_next_step="Route to an authorized manager, owner, or admin before action.",
+        )
+
+    if request.asks_to_execute and request.actor_role not in AUTHORIZED_EXECUTION_ROLES:
         return GateDecision(
             decision="review",
             binary=0,
@@ -67,11 +79,11 @@ def evaluate_request(request: WorkRequest) -> GateDecision:
             required_next_step="Send to manager approval before dispatch.",
         )
 
-    if request.requires_manager_approval or request.risk_level == "high":
+    if request.risk_level == "high":
         return GateDecision(
             decision="review",
             binary=0,
-            reason="The request is high-risk or explicitly requires manager approval.",
+            reason="The request is high-risk.",
             required_next_step="Route to Human Manager Review.",
         )
 
