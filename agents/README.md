@@ -1,6 +1,6 @@
 <div align="center">
 
-# HaleES Ratio-56 Agent Registry
+# HaleES-56 Agent Registry
 
 **Seven governed hospitality agent clusters. Fifty-six specialist capability profiles. One execution authority.**
 
@@ -60,3 +60,5 @@ flowchart LR
 ## How To Read
 
 Start with `control-plane.md` to understand authority, routing, grading, and audit. Then read the operational clusters that match the hospitality workflow you care about.
+
+[Back to main README](../README.md) · [Full HaleES-56 paper](../HALEES_56_HOSPITALITY_AGENT_ARCHITECTURE.md)
