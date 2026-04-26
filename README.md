@@ -7,6 +7,9 @@
 **Governed operational intelligence for systems where a useful answer is not the same thing as a trusted action.**
 
 <p align="center">
+  <a href="https://github.com/FatherHale/HaleES-Architecture/actions/workflows/public-reference-tests.yml">
+    <img src="https://github.com/FatherHale/HaleES-Architecture/actions/workflows/public-reference-tests.yml/badge.svg" alt="Public Reference Tests">
+  </a>
   <a href="https://github.com/FatherHale/HaleES-Architecture/blob/main/LICENSE.md">
     <img src="https://img.shields.io/badge/License-Apache--2.0-gold.svg?style=flat" alt="License: Apache-2.0">
   </a>
@@ -94,6 +97,17 @@ This repository is not the HaleES runtime, but it includes small public referenc
 | Mock contract loop | `python reference/end_to_end_mock_loop.py` | Shows contract, mock execution, dummy grading, decision, feedback, and iteration |
 | Contract validator | `python validators/contract_validator.py examples/staffing_recovery_contract.md` | Checks whether a markdown contract has the expected public sections |
 | Grading validator | `python validators/grading_validator.py examples/sample_grading_result.json` | Checks whether a grading result has the expected public fields and threshold decision |
+
+## CI Coverage
+
+The public CI workflow runs the deterministic reference checks on every push and pull request to `main`.
+
+| Check | Purpose |
+| --- | --- |
+| HaleES-56 reference tests | Confirms registry count, routing, and pass/review/block behavior |
+| HaleES-56 reference demo | Confirms the public demo runs without secrets, integrations, or LLM calls |
+| Contract validator | Confirms the public contract example keeps the expected shape |
+| Grading validator | Confirms the public grading result keeps the expected shape |
 
 ## HaleES-56 Reference Flow
 
