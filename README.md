@@ -24,7 +24,7 @@ Published by **Jason Hale, Founder of HaleES**.
 </div>
 
 > [!IMPORTANT]
-> HaleES starts with governance, not generation. This repository shares the public architecture, agent taxonomy, reference code, validators, use cases, field notes, failure cases, and benchmark plan. The production HaleES/Sensei OS runtime remains closed.
+> HaleES starts with governance, not generation. This repository shares the public architecture, agent taxonomy, workflow blueprints, reference code, validators, use cases, field notes, failure cases, and benchmark plan. The production HaleES/Sensei OS runtime remains closed.
 
 ## HaleES System Plan
 
@@ -42,6 +42,7 @@ It is a system plan, not a production-complete component claim.
 | Read the complete archive | [Full Whitepaper Archive](FULL_WHITEPAPER.md) |
 | Study the 56-agent hospitality architecture | [HaleES-56 Hospitality Agent Architecture](HALEES_56_HOSPITALITY_AGENT_ARCHITECTURE.md) |
 | Browse the public agent registry | [HaleES-56 Agent Registry](agents/README.md) |
+| Review public workflow blueprints | [Workflow Blueprints](workflows/README.md) |
 | Run the HaleES-56 reference demo | [HaleES-56 Reference Implementation](reference/halees_56/README.md) |
 | Review use cases | [Use Cases](USE_CASES.md) |
 | Review operational field notes | [Field Notes](FIELD_NOTES.md) |
@@ -70,6 +71,7 @@ A useful answer can still be unsafe to trust. HaleES treats that as the starting
 | Contract-driven work | The task is defined before execution begins |
 | Dual-layer grading | 0 to 100 evaluates; 0 or 1 decides |
 | HaleES-56 agent taxonomy | Hospitality work is mapped into governed specialist capability profiles |
+| Workflow blueprints | Public-safe operating paths show trigger, evidence, gate, output, and audit |
 | Policy and authority checks | Capability does not equal permission |
 | Ground-truth checks | Stale or missing data can block acceptance |
 | Human review | Sensitive work routes to manager approval instead of silent execution |
@@ -81,6 +83,7 @@ A useful answer can still be unsafe to trust. HaleES treats that as the starting
 | Evidence type | Included now | Not claimed yet |
 | --- | --- | --- |
 | Architecture | System plan, whitepaper, public boundary, HaleES-56 taxonomy | Production-complete open runtime |
+| Workflow design | Public blueprints for call-offs, labor cuts, guest recovery, prep, refunds, KDS bottlenecks, payroll/tips, and offline sync | Private Workflow Center implementation |
 | Reference code | Public deterministic registry, router, policy gate, examples, and demo runner | Closed HaleES/Sensei OS runtime |
 | Examples | Use cases, field notes, JSON scenario inputs, failure cases | Customer case studies |
 | Evaluation | Benchmark plan, validators, reference tests | Independent benchmark results |
@@ -139,13 +142,14 @@ flowchart LR
 
 | Use case | Public proof path |
 | --- | --- |
-| Same-day call-off coverage | [Use case](USE_CASES.md#use-case-1--same-day-call-off-coverage) · [JSON input](examples/halees_56/call_off_coverage.json) · reference demo |
-| Labor cut blocked by service ratio | [Failure case](examples/failure-case-labor-cut.md) · validators · grading rubric |
-| Guest complaint refund review | [Use case](USE_CASES.md#use-case-3--guest-complaint-recovery) · [JSON input](examples/halees_56/guest_refund_review.json) |
-| Stale inventory blocks prep change | [Use case](USE_CASES.md#use-case-4--stale-inventory-blocks-prep-change) · [JSON input](examples/halees_56/stale_inventory_prep_block.json) |
-| KDS delay triggers bottleneck review | [Use case](USE_CASES.md#use-case-6--kds-delay-triggers-kitchen-bottleneck-review) |
-| Payroll or tip-pool exception | [Use case](USE_CASES.md#use-case-8--payroll-or-tip-pool-exception) |
-| Offline mode queues work | [Use case](USE_CASES.md#use-case-9--offline-mode-queues-work) |
+| Same-day call-off coverage | [Use case](USE_CASES.md#use-case-1--same-day-call-off-coverage) · [Workflow](workflows/call-off-coverage.md) · [JSON input](examples/halees_56/call_off_coverage.json) · reference demo |
+| Labor cut blocked by service ratio | [Failure case](examples/failure-case-labor-cut.md) · [Workflow](workflows/labor-cut-review.md) · validators · grading rubric |
+| Guest complaint refund review | [Use case](USE_CASES.md#use-case-3--guest-complaint-recovery) · [Workflow](workflows/guest-recovery.md) · [JSON input](examples/halees_56/guest_refund_review.json) |
+| Stale inventory blocks prep change | [Use case](USE_CASES.md#use-case-4--stale-inventory-blocks-prep-change) · [Workflow](workflows/stale-inventory-prep.md) · [JSON input](examples/halees_56/stale_inventory_prep_block.json) |
+| KDS delay triggers bottleneck review | [Use case](USE_CASES.md#use-case-6--kds-delay-triggers-kitchen-bottleneck-review) · [Workflow](workflows/kds-bottleneck-review.md) |
+| Payroll or tip-pool exception | [Use case](USE_CASES.md#use-case-8--payroll-or-tip-pool-exception) · [Workflow](workflows/payroll-tip-exception.md) |
+| Offline mode queues work | [Use case](USE_CASES.md#use-case-9--offline-mode-queues-work) · [Workflow](workflows/offline-sync-reconciliation.md) |
+| Refund review | [Workflow](workflows/refund-review.md) |
 
 ## What Stays Closed
 
@@ -156,6 +160,7 @@ flowchart LR
 | Internal agent prompts | Private operating instructions and runtime behavior |
 | Model and tool routing | Operational execution logic |
 | Live integrations and adapters | Customer systems and commercial infrastructure |
+| Private Workflow Center implementation | Production workflow storage, routing, approval actions, and event handling |
 | Memory boundary implementation | Private data governance layer |
 | Hosted infrastructure | Deployment and operations layer |
 | Private datasets | Customer, employee, guest, transaction, and store data |
@@ -167,6 +172,7 @@ The public architecture materials in this repository are licensed under Apache-2
 | Public under Apache-2.0 | Requires separate HaleES agreement |
 | --- | --- |
 | Architecture specification | Production HaleES/Sensei OS runtime |
+| Public workflow blueprints | Private Workflow Center implementation |
 | Public examples and mock loops | Proprietary grader implementation |
 | Public schemas and validators | Live integrations and production adapters |
 | Public diagrams and documentation | Hosted infrastructure and deployment systems |
