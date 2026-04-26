@@ -34,3 +34,6 @@ jobs:
 
       - name: Run grading validator
         run: python validators/grading_validator.py examples/sample_grading_result.json
+
+      - name: Run workflow blueprint validator
+        run: python validators/workflow_blueprint_validator.py workflows
