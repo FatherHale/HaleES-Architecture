@@ -19,7 +19,7 @@
 </div>
 
 > [!IMPORTANT]
-> HaleES starts with governance, not generation. This repository shares the public contract, grading, privacy, observability, failure case, and governance pattern. The production Sensei OS runtime stays closed.
+> HaleES starts with governance, not generation. This repository shares the public contract, grading, privacy, observability, failure case, Ratio-56 hospitality agent architecture, and governance pattern. The production Sensei OS runtime stays closed.
 
 ## HaleES System Plan
 
@@ -35,6 +35,7 @@ It is a system plan, not a production-complete component claim.
 | --- | --- |
 | Read the visual whitepaper | [Whitepaper Reader](whitepaper/README.md) |
 | Read the complete archive | [Full Whitepaper Archive](FULL_WHITEPAPER.md) |
+| Study the 56-agent hospitality architecture | [Ratio-56 Hospitality Agent Architecture](RATIO_56_HOSPITALITY_AGENT_ARCHITECTURE.md) |
 | Run the public demo loop | [Quickstart](QUICKSTART.md) |
 | See HaleES block a bad action | [Failure Case: Labor Cut](examples/failure-case-labor-cut.md) |
 | Understand contracts | [Contract Spec](CONTRACT-SPEC.md) |
@@ -63,6 +64,7 @@ A useful answer can still be unsafe to trust. HaleES treats that as the starting
 | External ground truth | Stale or missing data can block acceptance |
 | Observability | Enforcement events become telemetry, not dead logs |
 | Rule management | Business rules can scale without hard coding every change |
+| Ratio-56 agent architecture | Hospitality work is mapped into governed specialist capability profiles |
 | Local first and cloud capable inference | Intelligence can run where the task needs it |
 | Privacy boundaries | Context is governed before it is used |
 | Auditability | Decisions should be explainable after the fact |
@@ -109,6 +111,7 @@ This is an early public specification with runnable reference material.
 | --- | --- | --- |
 | [Whitepaper Reader](whitepaper/README.md) | Presents the whitepaper as a visual multi-part reader | Not the production runtime |
 | [Full Whitepaper Archive](FULL_WHITEPAPER.md) | Preserves the complete long-form paper in one file | Not the production runtime |
+| [Ratio-56 Hospitality Agent Architecture](RATIO_56_HOSPITALITY_AGENT_ARCHITECTURE.md) | Defines 56 governed hospitality agent profiles, clusters, boundaries, and public workflow examples | Not internal prompts, production orchestration, or live customer logic |
 | [Mock loop](reference/end_to_end_mock_loop.py) | Shows contract, mock execution, dummy grading, decision, feedback, and iteration | Not the production runtime |
 | [Failure cases](examples/failure-case-labor-cut.md) | Shows bad actions being blocked | Not live customer logic |
 | [Validators](validators) | Check public contract and grading result shape | Not the production grader |
@@ -120,7 +123,7 @@ This is an early public specification with runnable reference material.
 | [Rule management notes](docs/rule-management.md) | Explain scalable policy ownership | Not the private admin console |
 
 > [!TIP]
-> Start with `whitepaper/README.md` for the visual reader, or `python reference/end_to_end_mock_loop.py` if you want to see the loop move instead of only reading about it.
+> Start with `RATIO_56_HOSPITALITY_AGENT_ARCHITECTURE.md` for the agent operating map, `whitepaper/README.md` for the visual reader, or `python reference/end_to_end_mock_loop.py` if you want to see the loop move instead of only reading about it.
 
 ## What Stays Closed
 
@@ -128,6 +131,7 @@ This is an early public specification with runnable reference material.
 | --- | --- |
 | Production Sensei OS runtime | Commercial product engine |
 | Private grader | Core reliability implementation |
+| Internal agent prompts | Private operating instructions and runtime behavior |
 | Model routing | Operational routing logic |
 | Tool routing | Execution authority logic |
 | Orchestration budgets | Internal safety and cost controls |
@@ -149,6 +153,7 @@ The public architecture materials in this repository are licensed under Apache-2
 | Public schemas and validators | Live integrations and production adapters |
 | Public diagrams and documentation | Hosted infrastructure and deployment systems |
 | Public governance pattern | Commercial runtime workflows and private policies |
+| Public Ratio-56 agent architecture | Internal prompts, proprietary execution logic, and runtime implementation |
 
 Commercial teams may study, fork, and build from the public architecture materials under Apache-2.0 terms. Commercial access to the HaleES production runtime, proprietary implementation, partnerships, support, or private deployment work requires a separate agreement with HaleES / Jason Hale.
 
@@ -160,6 +165,7 @@ Commercial teams may study, fork, and build from the public architecture materia
 | Authority | Must be granted, not assumed |
 | Skills | Knowledge, not permission |
 | Contracts | Define the work before execution |
+| Agent profiles | Specialist capability maps, not unchecked executors |
 | Core policy | Can block even high authority users |
 | Ground truth | Must be verified before risky actions proceed |
 | Grading | Measures whether the output satisfies the contract |
@@ -229,7 +235,7 @@ flowchart TD
 | Cloud inference is unavailable or inappropriate | Local or deterministic paths can still matter |
 | Private data could leak across contexts | Privacy boundaries stay part of execution authority |
 
-HaleES is not a chatbot for hospitality. It is a governed operational intelligence layer where models, local inference, deterministic rules, human approvals, and audited execution work inside one control system.
+HaleES is not a chatbot for hospitality. It is a governed operational intelligence layer where models, local inference, deterministic rules, human approvals, agent profiles, and audited execution work inside one control system.
 
 ## Enforcement Telemetry
 
@@ -270,7 +276,7 @@ Privacy, permission, and execution authority belong in the same governance layer
 ## Skills Are Knowledge, Not Authority
 
 > [!IMPORTANT]
-> A skill, prompt, model, tool, or workflow does not gain permission just because it exists or can execute.
+> A skill, prompt, model, tool, workflow, or agent profile does not gain permission just because it exists or can execute.
 
 In HaleES, authority must come from governance signals such as verified identity, applicable policy, risk classification, approval requirements, and audited execution context.
 
@@ -281,6 +287,7 @@ Many failures are not failures of generation. They are failures of authorization
 | Part | Public role |
 | --- | --- |
 | Models | Specialists |
+| Agent profiles | Capability maps and routing domains |
 | Tools | Governed capabilities |
 | Contracts | Work definition |
 | Grading | Acceptance check |
@@ -351,6 +358,7 @@ Global score must be 85 or higher.
 
 | Resource | What it shows |
 | --- | --- |
+| [Ratio-56 Hospitality Agent Architecture](RATIO_56_HOSPITALITY_AGENT_ARCHITECTURE.md) | 56 governed hospitality agent profiles and public-safe workflow examples |
 | [Failure case: labor cut](examples/failure-case-labor-cut.md) | A financially useful recommendation blocked by a hard staffing ratio |
 | [Failure case: policy conflict](examples/failure-case-policy-conflict.md) | High authority request blocked by constitutional policy |
 | [Failure case: missing ground truth](examples/failure-case-missing-ground-truth.md) | Recommendation paused because vendor data is unavailable |
@@ -371,7 +379,7 @@ Global score must be 85 or higher.
 
 | Use case | Public safe path |
 | --- | --- |
-| Learn the pattern | Read the contract and grading docs |
+| Learn the pattern | Read the contract, grading, and Ratio-56 docs |
 | Test the shape | Run validators against examples |
 | See the loop | Run the mock Python script |
 | Watch a failure case | Read the labor cut failure example |
@@ -385,6 +393,7 @@ The open specification shares the principle. The private HaleES runtime remains 
 | Dimension | Flexibility first pattern | HaleES pattern |
 | --- | --- | --- |
 | Main goal | Capability and experimentation | Governed execution |
+| Agent design | Generic personas or prompt chains | Hospitality-specific capability profiles |
 | Authority | Often prompt driven | Explicitly bounded |
 | Acceptance | Informal or reviewer based | Contract and grading based |
 | Retry behavior | Can drift or loop | Bounded iteration |
@@ -403,6 +412,7 @@ This is not a claim that every other framework is wrong. It is a different desig
 | Included publicly | Remains proprietary |
 | --- | --- |
 | Contract format | Sensei OS production runtime |
+| Ratio-56 agent names and responsibilities | Internal prompts and private runtime instructions |
 | Grading rubric | Closed source grader implementation |
 | Public examples | Model routing implementation |
 | JSON samples and schemas | Local and cloud inference routing implementation |
@@ -429,6 +439,7 @@ This notice is provided for transparency about the architecture direction and do
 | --- | --- |
 | Knowledge from authority | Knowing is not permission |
 | Output from acceptance | Generation does not equal trust |
+| Agent profile from execution authority | Expertise does not grant permission |
 | Score from decision | Nuance and execution need different layers |
 | Confidence from pass or fail | Certainty should not erase review needs |
 | Authority from core policy | Rank does not erase hard boundaries |
