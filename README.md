@@ -24,7 +24,8 @@
 
 | Need | Start here |
 | --- | --- |
-| Read the full public whitepaper | [Full Whitepaper](FULL_WHITEPAPER.md) |
+| Read the designed whitepaper reader | [Designed Whitepaper Reader](whitepaper/README.md) |
+| Read the full public whitepaper archive | [Full Whitepaper](FULL_WHITEPAPER.md) |
 | Run the public demo loop | [Quickstart](QUICKSTART.md) |
 | Understand contracts | [Contract Spec](CONTRACT-SPEC.md) |
 | Understand scoring | [Grading Rubric](GRADING-RUBRIC.md) |
@@ -72,7 +73,8 @@ This is an early public specification with runnable reference material.
 
 | Public artifact | What it does | What it is not |
 | --- | --- | --- |
-| [Full Whitepaper](FULL_WHITEPAPER.md) | Defines enforcement-first AI operations for hospitality | Not the production runtime |
+| [Designed Whitepaper Reader](whitepaper/README.md) | Presents the whitepaper as a visual multi-part reader | Not the production runtime |
+| [Full Whitepaper](FULL_WHITEPAPER.md) | Preserves the complete long-form paper in one file | Not the production runtime |
 | [Mock loop](reference/end_to_end_mock_loop.py) | Shows contract, mock execution, dummy grading, decision, feedback, and iteration | Not the production runtime |
 | [Validators](validators) | Check public contract and grading result shape | Not the production grader |
 | [JSON Schemas](schemas) | Define public JSON shapes | Not the private schema system |
@@ -80,7 +82,7 @@ This is an early public specification with runnable reference material.
 | [Reliability notes](GRADER_RELIABILITY.md) | Explain public grader trust questions | Not private scoring implementation |
 
 > [!TIP]
-> Start with `python reference/end_to_end_mock_loop.py` if you want to see the loop move instead of only reading about it.
+> Start with `whitepaper/README.md` for the designed reader, or `python reference/end_to_end_mock_loop.py` if you want to see the loop move instead of only reading about it.
 
 ## What Stays Closed
 
