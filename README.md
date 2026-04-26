@@ -24,6 +24,7 @@
 
 | Need | Start here |
 | --- | --- |
+| Read the full public whitepaper | [Full Whitepaper](FULL_WHITEPAPER.md) |
 | Run the public demo loop | [Quickstart](QUICKSTART.md) |
 | Understand contracts | [Contract Spec](CONTRACT-SPEC.md) |
 | Understand scoring | [Grading Rubric](GRADING-RUBRIC.md) |
@@ -71,6 +72,7 @@ This is an early public specification with runnable reference material.
 
 | Public artifact | What it does | What it is not |
 | --- | --- | --- |
+| [Full Whitepaper](FULL_WHITEPAPER.md) | Defines enforcement-first AI operations for hospitality | Not the production runtime |
 | [Mock loop](reference/end_to_end_mock_loop.py) | Shows contract, mock execution, dummy grading, decision, feedback, and iteration | Not the production runtime |
 | [Validators](validators) | Check public contract and grading result shape | Not the production grader |
 | [JSON Schemas](schemas) | Define public JSON shapes | Not the private schema system |
