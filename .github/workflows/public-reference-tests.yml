@@ -1,0 +1,36 @@
+name: Public Reference Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  public-reference-tests:
+    name: HaleES-56 reference tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run HaleES-56 reference tests
+        run: python reference/halees_56/test_reference_behavior.py
+
+      - name: Run HaleES-56 reference demo
+        run: python reference/halees_56/demo.py
+
+      - name: Run contract validator
+        run: python validators/contract_validator.py examples/staffing_recovery_contract.md
+
+      - name: Run grading validator
+        run: python validators/grading_validator.py examples/sample_grading_result.json
